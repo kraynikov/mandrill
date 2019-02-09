@@ -9,7 +9,7 @@ import datetime
 
 class BotHandler:
 
-    def __init__(self, token = '649233104:AAFhx1pMe560D8aVwkqEnSx8mKPiDUElMXc/'):
+    def __init__(self, token = '649233104:AAFhx1pMe560D8aVwkqEnSx8mKPiDUElMXc'):
         self.token = token
         self.api_url = "https://api.telegram.org/bot{}/".format(token)
 
