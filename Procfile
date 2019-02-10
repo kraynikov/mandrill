@@ -1,1 +1,1 @@
-worker: gunicorn gettingstarted.wsgi --log-file -
+worker: python mandrill.py
