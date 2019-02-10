@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Created on Sat Feb  9 15:55:55 2019
 
@@ -9,7 +8,7 @@ import datetime
 
 class BotHandler:
 
-    def __init__(self, token = '649233104:AAFhx1pMe560D8aVwkqEnSx8mKPiDUElMXc'):
+    def __init__(self, token):
         self.token = token
         self.api_url = "https://api.telegram.org/bot{}/".format(token)
 
@@ -36,10 +35,9 @@ class BotHandler:
 
         return last_update
 
-greet_bot = BotHandler('649233104:AAFhx1pMe560D8aVwkqEnSx8mKPiDUElMXc/')  
-greetings = ('здравствуй', 'привет', 'сру', 'здорово')  
+greet_bot = BotHandler('649233104:AAFhx1pMe560D8aVwkqEnSx8mKPiDUElMXc')  
+greetings = ('hello', 'salut', 'hi', 'fuck')  
 now = datetime.datetime.now()
-
 
 def main():  
     new_offset = None
@@ -57,15 +55,15 @@ def main():
         last_chat_name = last_update['message']['chat']['first_name']
 
         if last_chat_text.lower() in greetings and today == now.day and 6 <= hour < 12:
-            greet_bot.send_message(last_chat_id, 'Доброе утро, {}'.format(last_chat_name))
+            greet_bot.send_message(last_chat_id, 'Fuck off, {}'.format(last_chat_name))
             today += 1
 
         elif last_chat_text.lower() in greetings and today == now.day and 12 <= hour < 17:
-            greet_bot.send_message(last_chat_id, 'Добрый день, {}'.format(last_chat_name))
+            greet_bot.send_message(last_chat_id, 'Fuck off, {}'.format(last_chat_name))
             today += 1
 
         elif last_chat_text.lower() in greetings and today == now.day and 17 <= hour < 23:
-            greet_bot.send_message(last_chat_id, 'Добрый вечер, {}'.format(last_chat_name))
+            greet_bot.send_message(last_chat_id, 'Fuck off, {}'.format(last_chat_name))
             today += 1
 
         new_offset = last_update_id + 1
